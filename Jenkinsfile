@@ -27,7 +27,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script{
-                        docker.withRegistry('https://765449138108.dkr.ecr.us-east-1.amazonaws.com/my-vulwebapp-ecr-rep', 'ecr:us-east-1:aws-credentials') {
+                        docker.withRegistry('https://765449138108.dkr.ecr.us-east-1.amazonaws.com/my-vulwebapp-ecr-rep', 'ecr:us-east-1:Admin') {
                     app.push("${env.BUILD_NUMBER}")
                     app.push("latest")
                     }
